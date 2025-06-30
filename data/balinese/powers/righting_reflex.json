@@ -1,0 +1,59 @@
+{
+  "type": "origins:multiple",
+  "name": "Righting Reflex",
+  "description": "Cats possess a natural ability to reorient midair and avoid injury when falling.",
+  "badges": [
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/info.png",
+      "text": "You take 50% reduced fall damage, and are immune to falls shorter than 6 blocks. After falling, you get a short dash of Speed I, mimicking an escape response."
+    }
+  ],
+
+  "no_fall_dmg_six_blocks": {
+    "type": "origins:modify_damage_taken",
+    "damage_condition": {
+      "type": "origins:name",
+      "name": "fall"
+    },
+    "modifier": {
+      "operation": "set_total",
+      "value": 0,
+      "name": "no fall dmg when falling at or below 6 blocks"
+    },
+    "condition": {
+      "type": "origins:fall_distance",
+      "comparison": "<=",
+      "compare_to": 6
+    }
+  },
+  "reduced_fall_dmg": {
+    "type": "origins:modify_damage_taken",
+    "damage_condition": {
+      "type": "origins:name",
+      "name": "fall"
+    },
+    "modifier": {
+      "operation": "multiply_total_multiplicative",
+      "value": -0.5,
+      "name": "50% fall damage"
+    }
+  },
+
+  "speed_on_land": {
+    "type": "origins:action_on_land",
+    "entity_action": {
+      "type": "origins:apply_effect",
+      "effect": {
+        "effect": "minecraft:speed",
+        "duration": 50,
+        "show_particles": false
+      }
+    },
+    "condition": {
+      "type": "origins:fall_distance",
+      "comparison": ">=",
+      "compare_to": 4
+    }
+  }
+}

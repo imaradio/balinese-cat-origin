@@ -1,0 +1,103 @@
+{
+  "type": "origins:multiple",
+  "name": "Light Frame",
+  "description": "Your build prioritizes mobility over durability.",
+  "badges": [
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/info.png",
+      "text": "You have 8 hearts (16 HP), are just over half the size of a human, and take slightly more knockback from attacks. Having a coat of fur, you also take significantly more fire damage."
+    }
+  ],
+
+  "attribute_changes": {
+    "type": "origins:attribute",
+    "modifiers": [
+      {
+        "attribute": "minecraft:generic.max_health",
+        "operation": "addition",
+        "value": -4,
+        "name": "reduced hp, 8 hearts"
+      },
+      {
+        "attribute": "minecraft:generic.movement_speed",
+        "operation": "addition",
+        "value": 0.01,
+        "name": "increased movement speed"
+      }
+    ]
+  },
+
+  "increased_knockback": {
+    "type": "origins:action_when_hit",
+    "bientity_action": {
+      "type": "origins:add_velocity",
+      "y": 0.3,
+      "z": 0.9
+    }
+  },
+
+  "increased_fire_dmg": {
+    "type": "origins:modify_damage_taken",
+    "damage_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:name",
+          "name": "fireball"
+        },
+        {
+          "type": "origins:name",
+          "name": "fireworks"
+        },
+        {
+          "type": "origins:name",
+          "name": "hotFloor"
+        },
+        {
+          "type": "origins:name",
+          "name": "inFire"
+        },
+        {
+          "type": "origins:name",
+          "name": "lava"
+        },
+        {
+          "type": "origins:name",
+          "name": "onFire"
+        }
+      ]
+    },
+    "modifier": {
+      "operation": "multiply_total_multiplicative",
+      "value": 0.5,
+      "name": "1.5x fire dmg"
+    }
+  },
+
+  "size_change": {
+    "type": "origins:action_on_callback",
+    "entity_action_added": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "scale set pehkui:height 0.65"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "scale set pehkui:width 0.65"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "scale set pehkui:drops 0.8"
+        }
+
+      ]
+    },
+    "entity_action_removed": {
+      "type": "origins:execute_command",
+      "command": "scale reset @s"
+    }
+  }
+}

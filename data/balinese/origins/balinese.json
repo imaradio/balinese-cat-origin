@@ -1,0 +1,18 @@
+{
+  "powers": [
+    "balinese:silent_step",
+    "balinese:leap",
+    "balinese:keen_awarness",
+    "balinese:righting_reflex",
+    "balinese:night_vision",
+    "balinese:hydrophobic",
+    "balinese:pescetarian_preference",
+    "balinese:light_frame",
+    "origins:scare_creepers"
+  ],
+  "icon": "minecraft:cat_spawn_egg",
+  "order": 0,
+  "impact": 2,
+  "name": "Balinese Cat",
+  "description": "A naturally curious and perceptive species, the Balinese are modeled after real world cats built for agility, silence, and survival. While not particularly strong, their reflexes, senses, and movement give them a natural edge in exploration and evasion."
+}

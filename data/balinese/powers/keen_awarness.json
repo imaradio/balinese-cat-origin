@@ -1,0 +1,28 @@
+{
+  "type": "origins:action_when_hit",
+  "bientity_action": {
+    "type": "origins:target_action",
+    "action": {
+      "type": "origins:apply_effect",
+      "effect": {
+        "effect": "minecraft:speed",
+        "duration": 100,
+        "show_particles": false
+      }
+    },
+    "cooldown": 600,
+    "hud_render": {
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+      "bar_index": 1
+    }
+  },
+  "name": "Keen Awarness",
+  "description": "Felines process motion and threat faster than most species.",
+  "badges": [
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/info.png",
+      "text": "After being hit, gain a burst of Speed I for five seconds, with a thirty second cooldown."
+    }
+  ]
+}

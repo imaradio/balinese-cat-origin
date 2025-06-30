@@ -1,0 +1,19 @@
+{
+  "type": "origins:modify_food",
+  "food_modifier": {
+    "operation": "addition",
+    "value": 2
+  },
+  "saturation_modifier": {
+    "operation": "addition",
+    "value": 1
+  },
+  "item_condition": {
+    "type": "origins:ingredient",
+    "ingredient": {
+      "tag": "minecraft:fishes"
+    }
+  },
+  "name": "Pescetarian Preference",
+  "description": "As a cat, you §llove§r fish. You find they fill you up more."
+}

@@ -1,0 +1,28 @@
+{
+  "type": "origins:multiple",
+  "name": "Silent Step",
+  "description": "Your padded feet allow them to move undetected, avoiding both prey and predators.",
+  "badges": [
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/info.png",
+      "text": "You cannot trigger sculk sensors, and hostile mobs are less able to detect you."
+    }
+  ],
+
+  "invisible_to_sculk_sensors": {
+    "type": "origins:prevent_game_event",
+    "tag": "minecraft:vibrations"
+  },
+  "reduced_visiblity_to_mobs": {
+    "type": "origins:action_on_callback",
+    "entity_action_added": {
+      "type": "origins:execute_command",
+      "command": "scale set pehkui:visibility 0.75"
+    },
+    "entity_action_removed": {
+      "type": "origins:execute_command",
+      "command": "scale reset pehkui:visibility"
+    }
+  }
+}

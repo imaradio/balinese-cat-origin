@@ -1,0 +1,59 @@
+{
+  "type": "origins:multiple",
+  "name": "Hydrophbic",
+  "description": "Despite your agility, water happens to disrupt a cat's balance and coordination.",
+  "badges": [
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/info.png",
+      "text": "While fully submerged, you suffer Slowness II and Mining Fatigue I, and take minor damage over time. Rain doesn’t hurt you, but does interrupts your comfort by slowing down your movement and actions."
+    }
+  ],
+
+  "effects": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:apply_effect",
+      "effects": [
+        {
+          "effect": "minecraft:slowness",
+          "amplifier": 1,
+          "duration": 20,
+          "show_particles": false
+        },
+        {
+          "effect": "minecraft:mining_fatigue",
+          "duration": 20,
+          "show_particles": false
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:submerged_in",
+          "fluid": "minecraft:water"
+        },
+        {
+          "type": "origins:in_rain"
+        }
+      ]
+    }
+  },
+
+  "damage": {
+    "type": "origins:action_over_time",
+    "interval": 30,
+    "entity_action": {
+      "type": "origins:damage",
+      "amount": 1,
+      "damage_type": "origins:hurt_by_water"
+    },
+    "condition": {
+      "type": "origins:submerged_in",
+      "fluid": "minecraft:water"
+    }
+  }
+}
