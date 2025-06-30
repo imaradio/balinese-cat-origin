@@ -29,7 +29,7 @@ Despite your agility, water happens to disrupt a cat's balance and coordination.
 _While fully submerged, you suffer Slowness II and Mining Fatigue I, and take minor damage over time. Rain doesn’t hurt you, but does interrupts your comfort by slowing down your movement and actions._
 
 <ins>Pescetarian Preference</ins> <br>
-As a cat, you **love** fish. You find they fill you up more
+As a cat, you **love** fish. You find they fill you up more.
 
 <ins>Light Frame</ins> <br>
 Your build prioritizes mobility over durability.
